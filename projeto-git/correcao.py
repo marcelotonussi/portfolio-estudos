@@ -1,0 +1,1 @@
+print("Correção do bug-1")
