@@ -1,0 +1,20 @@
+# Cache do Python (arquivos compilados automaticamente)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambientes Virtuais (pastas onde ficam instaladas as bibliotecas do Python)
+.venv/
+venv/
+env/
+ENV/
+
+# Arquivos de configuração do VS Code ou outros editores
+.vscode/
+.idea/
+
+# Arquivos temporários ou históricos de bancos de dados / SQL
+*.log
+*.sqlite
+.DS_Store
