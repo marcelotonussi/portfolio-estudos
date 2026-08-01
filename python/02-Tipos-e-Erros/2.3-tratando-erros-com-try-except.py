@@ -91,5 +91,24 @@ while numero_valido == False:
     try:
         gols = int(input("Quantos gols o Brasil fez? "))
         numero_valido = True
+
     except ValueError:
         print("Valor inválido. Digite um número inteiro. (ex: 1, 2, 4..)")
+
+# 6) Somnado os gols do Brasil em 3 jogos
+total_gols = 0
+
+for jogo in range(1, 4):
+    numero_valido = False
+
+    while numero_valido == False:
+        try:
+            gols = int(input(f"Quantos gols o Brasil fez no jogo {jogo}? "))
+            numero_valido = True
+
+        except ValueError:
+            print("Valor inválido. Digite um número inteiro.")
+
+    total_gols += gols
+
+print(f"Total de gols do Brasil: {total_gols}")
