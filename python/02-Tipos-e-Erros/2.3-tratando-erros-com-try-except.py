@@ -149,3 +149,21 @@ media = total_gols / 3
 print(f"Média de gols por jogo: {media:.2f}")
 
 
+#--------------------------------------------------------------
+# 8) Código Extra da aula para estudos: Campanha do Brasil na Copa
+#--------------------------------------------------------------
+
+total_gols_brasil: int = 0
+total_gols_adversarios: int = 0
+pontos: int = 0
+
+for jogo in range(1, 4):
+    print(f" Jogo {jogo}")
+
+    numero_valido: bool = False
+
+    while numero_valido == False:
+        try:
+            pass
+        except ValueError:
+            pass
