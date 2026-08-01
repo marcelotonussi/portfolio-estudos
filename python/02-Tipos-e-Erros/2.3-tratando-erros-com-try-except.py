@@ -164,6 +164,21 @@ for jogo in range(1, 4):
 
     while numero_valido == False:
         try:
-            pass
+            gols_brasil = int(input("Quantos gols o Brasil fez? "))
+            numero_valido = True
+
         except ValueError:
-            pass
+            print("Valor inválido. Digite um número inteiro.")
+
+    numero_valido = False
+
+    while numero_valido == False:
+        try:
+            gols_adversario = int(input("Quantos gols o adversário fez? "))
+        except ValueError:
+            print("Valor inválido. Digite um número inteiro.")
+
+    total_gols_brasil += gols_brasil
+    total_gols_adversarios += gols_adversario
+
+    
