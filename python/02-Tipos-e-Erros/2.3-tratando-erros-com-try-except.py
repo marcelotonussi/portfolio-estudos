@@ -45,20 +45,21 @@ Logs e depuração:
     É essencial para gravar os erros em arquivos de texto (logs) para análise posterior, 
     sem interromper o funcionamento do sistema.
 '''
-
+#--------------------------------------------------------------
 # 1) Código que quebra se o usuário digitar errado
+#--------------------------------------------------------------
 gols = int(input("Quantos gols o Brasil fez? "))
 print(f"O Brasil fez {gols} gols.")
 
 #--------------------------------------------------------------
-
 # 2) ValueError acontecendo
+#--------------------------------------------------------------
 # numero = int("três")
 # print(numero)
 
 #--------------------------------------------------------------
-
 # 3) Tratando erro ao digitar os gols do Brasil
+#--------------------------------------------------------------
 try:
     gols = int(input("Quantos gols o Brasil fez? "))
     print(f"O Brasil fez {gols} gols.")
@@ -67,8 +68,8 @@ except ValueError:
     print("Você precisa digitar um número inteiro") # esse print é opcional
 
 #--------------------------------------------------------------
-
 # 4) Analisando os gols do Brasil usando try/except com if
+#--------------------------------------------------------------
 try:
     gols = int(input("Quantos gols o Brasil marcou?"))
 
@@ -83,9 +84,9 @@ except ValueError:
     print("Você precisa digitar um número inteiro.")
 
 #--------------------------------------------------------------
-
 # 5) Pedindo os gols até o usuário digitar um número válido
-numero_valido = False
+#--------------------------------------------------------------
+numero_valido: bool = False
 
 while numero_valido == False:
     try:
@@ -95,11 +96,14 @@ while numero_valido == False:
     except ValueError:
         print("Valor inválido. Digite um número inteiro. (ex: 1, 2, 4..)")
 
+
+#--------------------------------------------------------------
 # 6) Somnado os gols do Brasil em 3 jogos
-total_gols = 0
+#--------------------------------------------------------------
+total_gols: int = 0
 
 for jogo in range(1, 4):
-    numero_valido = False
+    numero_valido: bool = False
 
     while numero_valido == False:
         try:
@@ -113,12 +117,35 @@ for jogo in range(1, 4):
 
 print(f"Total de gols do Brasil: {total_gols}")
 
-# 7) Mostrando o desempenho do Brasil em cada jogo
-total_gols = 0
 
-for jogo in range(', 4'):
-    numero_valido = False
+#--------------------------------------------------------------
+# 7) Mostrando o desempenho do Brasil em cada jogo
+#--------------------------------------------------------------
+total_gols: int = 0
+
+for jogo in range(1, 4):
+    numero_valido: bool = False
 
     while numero_valido == False:
         try:
-            gols = int(input(f"Quantos gols o Brasil"))
+            gols = int(input(f"Quantos gols o Brasil fez no jogo {jogo}? "))
+            numero_valido = True
+        except ValueError:
+            print("Valor inválido. Digite um número inteiro.")
+
+    total_gols += gols
+
+    if gols == 0:
+        print("O Brasil não marcou nesse jogo.")
+    elif gols == 1:
+        print("O Brasil marcou 1 gol nesse jogo.")
+    else:
+        print(f"O Brasil marcou {gols} gols nesse jogo.")
+
+print(f"Total de gols do Brasil: {total_gols}")
+
+media = total_gols / 3
+
+print(f"Média de gols por jogo: {media:.2f}")
+
+
