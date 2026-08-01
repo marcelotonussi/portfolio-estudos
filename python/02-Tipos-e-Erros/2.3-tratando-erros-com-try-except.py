@@ -234,3 +234,12 @@ for jogo in range(1, 4):
         pontos += 1
     else:
         print("Derrota do Brasil. =(")
+
+    print("--------------------------------")
+
+    print("Resumo de fase de grupos")
+    print(f"Total de gols do Brasil: {total_gols_brasil}")
+    print(f"Total de gols sofridos: {total_gols_adversarios}")
+    print(f"Pontuação final: {pontos}")
+
+    
