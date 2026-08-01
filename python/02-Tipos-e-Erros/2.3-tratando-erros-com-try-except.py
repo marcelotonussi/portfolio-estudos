@@ -112,3 +112,13 @@ for jogo in range(1, 4):
     total_gols += gols
 
 print(f"Total de gols do Brasil: {total_gols}")
+
+# 7) Mostrando o desempenho do Brasil em cada jogo
+total_gols = 0
+
+for jogo in range(', 4'):
+    numero_valido = False
+
+    while numero_valido == False:
+        try:
+            gols = int(input(f"Quantos gols o Brasil"))
