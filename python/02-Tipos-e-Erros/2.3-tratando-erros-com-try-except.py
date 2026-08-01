@@ -175,10 +175,62 @@ for jogo in range(1, 4):
     while numero_valido == False:
         try:
             gols_adversario = int(input("Quantos gols o adversário fez? "))
+            numero_valido = True
         except ValueError:
             print("Valor inválido. Digite um número inteiro.")
 
     total_gols_brasil += gols_brasil
     total_gols_adversarios += gols_adversario
 
-    
+    if gols_brasil > gols_adversario:
+        print("Vitória do Brasil!")
+        pontos += 3
+        import sys
+        #-------------------------------------------------------------------
+        # Criando bandeira do Brasil.
+        # Configuração de cores ANSI para blocos de fundo no terminal
+        VERDE = '\033[48;5;28m'
+        AMARELO = '\033[48;5;220m'
+        AZUL = '\033[48;5;21m'
+        BRANCO = '\033[48;5;15m'
+        RESET = '\033[0m'
+
+        # Matriz que define o desenho simplificado da bandeira
+        desenho_bandeira = [
+            "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGYYYGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGYYYYYYYGGGGGGGGGGGGG",
+            "GGGGGGGGGGGYYYYYYYYYYYYYGGGGGGGGGG",
+            "GGGGGGGGYYYYYYBBBBBBBYYYYYYGGGGGGG",
+            "GGGGGGYYYYYYBBBBBBBBBBBYYYYYYGGGGG",
+            "GGGYYYYYYYYYBBBBBBBWWWWYYYYYYYYYGG",
+            "GGGYYYYYYYYYBBBWWWWBBBBYYYYYYYYYGG",
+            "GGGGGGYYYYYYWWWBBBBBBBBYYYYYYGGGGG",
+            "GGGGGGGGYYYYYYBBBBBBBYYYYYYGGGGGGG",
+            "GGGGGGGGGGGYYYYYYYYYYYYYGGGGGGGGGG",
+            "GGGGGGGGGGGGGGYYYYYYYGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGYYYGGGGGGGGGGGGGGG",
+            "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+        ]
+
+        # Dicionário de mapeamento para os blocos coloridos
+        mapeamento = {
+            'G': VERDE + '  ',    # Dois espaços para formar um bloco quadrado
+            'Y': AMARELO + '  ',
+            'B': AZUL + '  ',
+            'W': BRANCO + '  '
+        }
+        #-------------------------------------------------------------------
+        # Renderização na tela da bandeira do Brasil
+        print("\n")
+        for linha in desenho_bandeira:
+            linha_colorida = "".join(mapeamento[pixel] for pixel in linha)
+            print(linha_colorida + RESET)
+        print("\n")
+        #-------------------------------------------------------------------
+    elif gols_brasil == gols_adversario:
+        print("Empate do Brasil.")
+        pontos += 1
+    else:
+        print("Derrota do Brasil. =(")
