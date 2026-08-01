@@ -237,9 +237,15 @@ for jogo in range(1, 4):
 
     print("--------------------------------")
 
-    print("Resumo de fase de grupos")
-    print(f"Total de gols do Brasil: {total_gols_brasil}")
-    print(f"Total de gols sofridos: {total_gols_adversarios}")
-    print(f"Pontuação final: {pontos}")
+print("Resumo de fase de grupos")
+print("--------------------------------")
+print(f"Total de gols do Brasil: {total_gols_brasil}")
+print(f"Total de gols sofridos: {total_gols_adversarios}")
+print(f"Pontuação final: {pontos}")
 
-    
+if pontos >= 6:
+    print("Brasil classificado para a próxima fase!")    
+elif pontos >= 4:
+    print("O Brasil ainda tem chance, mas depende do grupo")
+else: 
+    print("Brasil em situação difícil na Copa.")
